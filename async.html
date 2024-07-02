@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <!-- set timeout -->
+    <!-- <h1>Beer and Code</h1>
+    <button id="stop">stop</button> -->
+
+    <!-- set interval -->
+     <h1>Coffee and code</h1>
+     <button id="start">Start</button>
+     <button id="stop">Stop</button>
+</body>
+<script>
+    //set timeout
+    // const sayAkash= function(){
+    //     console.log("Akash");
+    // }
+    // const changeText= function(){
+    //     document.querySelector('h1'),
+    //     innerHTML="best Time with you"
+    // }
+    // setTimeout(changeText,2000)
+
+    // const changeMe=setTimeout(changeText,5000)
+    // document.querySelector('#stop').addEventListener('click',function(){
+    //     clearTimeout(changeMe)
+    //     console.log("STOPPED")
+    // })
+
+    // set interval
+
+    const startMe=function(str){
+        console.log(str, Date.now());
+    }
+     const stopMe=setInterval(startMe,2000)
+     document.querySelector('#stop').addEventListener('click',function(){
+        clearInterval(stopMe)
+        console.log("Ruk jao")
+     })
+    const intervalId= setInterval(startMe,2000,"Akash")
+    
+
+
+</script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+
+<body style="background-color: #313131; color: aliceblue;">
+    <h2>Bharat Mata Ki jay!</h2>
+    <button id="orange">Orange</button>
+    <button id="white">White</button>
+    <button id="green">Green</button>
+   
+
+</body>
+<script>
+    function init() {
+        let name = "FireFox";
+        function displayName() {
+            console.log(name);
+        }
+        return displayName;
+    }
+    const myinit = init();
+    console.log(init());
+    // console.log(displayName); we cant access bcux of lexical scooping
+
+    //lexical scope with example
+
+    // function outer(){
+    //     let name="AkashRajput"
+
+    //     function inner(){
+    //         let names="PallavRajput"
+    //         console.log("inner",name);
+    //     }
+    //     inner()
+    // function Deepinner(){
+    //     console.log("Deepinner",names)
+    // }
+    // Deepinner()
+    // }
+    // outer();
+    // console.log("outer",name);
+</script>
+
+<script>
+    document.getElementById("orange").onclick = function () {
+        document.body.style.backgroundColor=`orange`
+    }   
+    document.getElementById("white").onclick = function () {
+        document.body.style.backgroundColor=`white`
+    }  
+    document.getElementById("green").onclick = function () {
+        document.body.style.backgroundColor=`green`
+    }   
+
+    function clickHandler(color){
+        // document.body.style.background = `${color}`
+        return function(){
+            document.body.style.background=`${color}`
+        }
+    }
+
+</script>
+</html>
